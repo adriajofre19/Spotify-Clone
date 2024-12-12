@@ -1,8 +1,4 @@
-import { useRef } from "react"
-import { useEffect } from "react"
 import { usePlayerStore } from "../store/playerStore"
-import { Slider } from "./Slider"
-import { useState } from "react"
 import { Volume } from "./Player"
 
 export const SideMenuCardReact = (playlist) => {
@@ -17,12 +13,12 @@ export const SideMenuCardReact = (playlist) => {
     let className = 'playlist-item flex relative p-2 overflow-hidden items-center gap-4 rounded-md hover:bg-zinc-800'
 
     let hidden = 'hidden'
-    let green = ''
+    let green = 'text-zinc-100'
 
     if (activePlaylist) {
         className += ' playlist-item flex relative p-2 overflow-hidden items-center gap-4 rounded-md bg-gray-800'
         hidden = ''
-        green = 'text-green-400'
+        green += 'text-green-400'
     }
 
     return (
@@ -40,7 +36,7 @@ export const SideMenuCardReact = (playlist) => {
             </picture>
 
             <div className="flex flex-auto flex-col truncate">
-                <h4 className={`text-zinc-100 text-sm ${green}`}>{title}</h4>
+                <h4 className={`${green} text-sm`}>{title}</h4>
                 <span className="text-gray-400 text-xs">{artistsString}</span>
             </div>
             <div className={`${hidden} text-green-400 pr-2`}>

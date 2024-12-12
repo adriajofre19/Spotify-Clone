@@ -21,8 +21,9 @@ export function CardPlayButton({ id, size = 'small' }) {
             .then(res => res.json())
             .then(data => {
                 const { songs, playlist } = data
+                const randomIndex = Math.floor(Math.random() * songs.length)
                 setIsPlaying(true)
-                setCurrentMusic({ songs, playlist, song: songs[0] })
+                setCurrentMusic({ songs, playlist, song: songs[randomIndex] })
 
             })
     }
