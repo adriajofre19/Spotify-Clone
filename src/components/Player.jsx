@@ -19,6 +19,10 @@ export const Play = ({ className }) => (
     ></path></svg>
 )
 
+export const NextSong = () => (
+    <svg height="16px" width="16px" role="img" fill="currentColor" aria-hidden="true" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 dYnaPI"><path d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.05 1.107A.7.7 0 0 0 1 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"></path></svg>
+)
+
 export const VolumeSilence = () => (
     <svg height="16px" width="16px" fill="currentColor" role="presentation" aria-label="Volumen apagado" aria-hidden="false" id="volume-icon" viewBox="0 0 16 16" class="Svg-sc-ytk21e-0 kcUFwU"><path d="M13.86 5.47a.75.75 0 0 0-1.061 0l-1.47 1.47-1.47-1.47A.75.75 0 0 0 8.8 6.53L10.269 8l-1.47 1.47a.75.75 0 1 0 1.06 1.06l1.47-1.47 1.47 1.47a.75.75 0 0 0 1.06-1.06L12.39 8l1.47-1.47a.75.75 0 0 0 0-1.06z"></path><path d="M10.116 1.5A.75.75 0 0 0 8.991.85l-6.925 4a3.642 3.642 0 0 0-1.33 4.967 3.639 3.639 0 0 0 1.33 1.332l6.925 4a.75.75 0 0 0 1.125-.649v-1.906a4.73 4.73 0 0 1-1.5-.694v1.3L2.817 9.852a2.141 2.141 0 0 1-.781-2.92c.187-.324.456-.594.78-.782l5.8-3.35v1.3c.45-.313.956-.55 1.5-.694V1.5z"></path></svg>
 )
@@ -128,7 +132,7 @@ const CurrentSong = ({ image, title, artists }) => {
 }
 
 export function Player() {
-    const { currentMusic, isPlaying, setIsPlaying, volume } = usePlayerStore(state => state)
+    const { currentMusic, isPlaying, setIsPlaying, volume, setCurrentMusic } = usePlayerStore(state => state)
 
     const audioRef = useRef()
 
@@ -153,6 +157,19 @@ export function Player() {
         audioRef.current.volume = volume
     }, [volume])
 
+    const handleClickNextSong = () => {
+
+        const { songs } = currentMusic
+        const currentIndex = songs.findIndex(song => song.id === currentMusic.song.id)
+        const nextIndex = currentIndex + 1
+        const nextSong = songs[nextIndex]
+
+        if (nextSong) {
+            setIsPlaying(true)
+            setCurrentMusic({ ...currentMusic, song: nextSong })
+        }
+    }
+
     const handleClick = () => {
         setIsPlaying(!isPlaying)
     }
@@ -164,10 +181,14 @@ export function Player() {
             </div>
             <div className="grid place-content-center gap-4 flex-1">
                 <div className="flex justify-center flex-col items-center">
-
+                    <div className="flex gap-4">
                     <button className="p-2 bg-white rounded-full" onClick={handleClick}>
                         {isPlaying ? <Pause /> : <Play />}
                     </button>
+                    <button className="p-2 text-white rounded-full" onClick={handleClickNextSong}>
+                        {<NextSong />}
+                    </button>
+                    </div>
                     <SongControl audio={audioRef} />
                 </div>
             </div>

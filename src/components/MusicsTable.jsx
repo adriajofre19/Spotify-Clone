@@ -1,45 +1,52 @@
 import { usePlayerStore } from "../store/playerStore"
+import { playlists } from "../lib/data"
 
 
 export const MusicsTable = ({ songs }) => {
     
     const state = usePlayerStore()
-    
 
-    const isPlaying = (id) => {
+    const { currentMusic, isPlaying, setIsPlaying, volume } = usePlayerStore(state => state)
+
+    const GetActiveSong = (id) => {
         const song = songs.find(song => song.id === id)
-        if (state.isPlaying === false) {
-            return (
-                <h3 className="text-white text-base font-normal">
-                    {song.title}
-                </h3>
-            )
-        } else {
-            if (state.currentMusic.song.id === id) {
+        if (state.currentMusic.song != null) {
+            if (currentMusic.song.id === id) {
                 return (
-                    <h3 className="text-green-400 text-base font-normal">
+                    <h3 className='text-green-400 text-base font-normal'>
                         {song.title}
                     </h3>
                 )
             } else {
                 return (
-                    <h3 className="text-white text-base font-normal">
+                    <h3 className='text-white text-base font-normal'>
                         {song.title}
                     </h3>
                 )
             }
-        }   
+        } else {
+            return (
+                <h3 className='text-white text-base font-normal'>
+                    {song.title}
+                </h3>
+            )
+        }
     }
-
-    const { currentMusic, setIsPlaying } = usePlayerStore(state => state)
 
     const setCurrentMusic = (id) => () => {
         const song = songs.find(song => song.id === id)
+        const playlist = playlists.find(playlist => playlist.id = song.albumId)
+
+        if (state.isPlaying === true) {
         if (currentMusic.song.id === id) {
             setIsPlaying(!state.isPlaying)
         } else {
             setIsPlaying(true)
-            state.setCurrentMusic({ songs, playlist: { id: 1, name: "Playlist" }, song })
+            state.setCurrentMusic({ songs, playlist, song })
+        }
+        } else {
+            setIsPlaying(true)
+            state.setCurrentMusic({ songs, playlist, song })
         }
     }
 
@@ -74,8 +81,10 @@ export const MusicsTable = ({ songs }) => {
                                     />
                                 </picture>
                                 <div className="flex flex-col">
+                                
+
+                                { GetActiveSong(song.id) }
                                     
-                                        {isPlaying(song.id)}
                                     
                                     <span>{song.artists.join(", ")}</span>
                                 </div>

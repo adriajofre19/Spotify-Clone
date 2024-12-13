@@ -13,19 +13,17 @@ export const playlists: Playlist[] = [
     {
         id: '1',
         albumId: 1,
-        title: "Chill Lo-Fi Music",
+        title: "This is Manolo Garcia",
         color: colors.yellow,
-        cover:
-            "https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353",
-        artists: ["NoSpirit", "Casiio"],
+        cover:"https://phantom-elmundo.unidadeditorial.es/35542c5b1e0f4b62ed6e34dbe7de6059/resize/414/f/jpg/assets/multimedia/imagenes/2019/04/25/15562173554752.jpg",
+        artists: ["Manolo Garcia"],
     },
     {
         id: '2',
         albumId: 2,
         title: "Lo-Fi Chill Session",
         color: colors.green,
-        cover:
-            "https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187",
+        cover:"https://vinyl.lofirecords.com/cdn/shop/files/2amsynth-vinyl.png?v=1693312187",
         artists: ["Kupla", "Blue Fox"],
     },
     {
@@ -33,8 +31,7 @@ export const playlists: Playlist[] = [
         albumId: 3,
         title: "Study Session",
         color: colors.rose,
-        cover:
-            "https://f4.bcbits.com/img/a1435058381_65.jpg",
+        cover:"https://f4.bcbits.com/img/a1435058381_65.jpg",
         artists: ["Tenno", "xander", "Team Astro"],
     },
     {
@@ -42,8 +39,7 @@ export const playlists: Playlist[] = [
         albumId: 4,
         title: "Blue Note Study Time",
         color: colors.blue,
-        cover:
-            "https://f4.bcbits.com/img/a1962013209_16.jpg",
+        cover:"https://f4.bcbits.com/img/a1962013209_16.jpg",
         artists: ["Raimu", "Yasumu"],
     },
     {
@@ -51,8 +47,7 @@ export const playlists: Playlist[] = [
         albumId: 5,
         title: "Chau Saura Session",
         color: colors.purple,
-        cover:
-            "https://f4.bcbits.com/img/a2793859494_16.jpg",
+        cover:"https://f4.bcbits.com/img/a2793859494_16.jpg",
         artists: ["Chau Saura", "amies", "kyu"],
     },
     {
@@ -60,8 +55,7 @@ export const playlists: Playlist[] = [
         albumId: 6,
         title: "Like a Necessity",
         color: colors.orange,
-        cover:
-            "https://f4.bcbits.com/img/a0363730459_16.jpg",
+        cover:"https://f4.bcbits.com/img/a0363730459_16.jpg",
         artists: ["WFS", "Nadav Cohen"],
     },
 ];
@@ -96,46 +90,46 @@ export const songs: Song[] = [
     {
         "id": 1,
         "albumId": 1,
-        "title": "Moonlit Walk",
-        "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-        "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "title": "A San Fernando",
+        "image": `https://i.scdn.co/image/ab67616d0000b273088ac62bb5a78a91e7d4c6dc`,
+        "artists": ["Manolo Garcia"],
+        "album": "Manolo Garcia",
         "duration": "2:57"
     },
     {
         "id": 2,
         "albumId": 1,
-        "title": "Coffee Daze",
-        "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-        "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
-        "duration": "3:40"
+        "title": "Pajaros de Barro",
+        "image": `https://i.scdn.co/image/ab67616d0000b273088ac62bb5a78a91e7d4c6dc`,
+        "artists": ["Manolo Garcia"],
+        "album": "Manolo Garcia",
+        "duration": "3:59"
     },
     {
         "id": 3,
         "albumId": 1,
-        "title": "Skyline Serenade",
-        "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-        "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "title": "Nunca El Tiempo es Perdido",
+        "image": `https://i.scdn.co/image/ab67616d00001e02751551d5ab31d334f8c7f7b6`,
+        "artists": ["Manolo Garcia"],
+        "album": "Manolo Garcia",
         "duration": "3:29"
     },
     {
         "id": 4,
         "albumId": 1,
-        "title": "Urban Echoes",
-        "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-        "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "title": "Carbon y Ramas Secas",
+        "image": `https://i.scdn.co/image/ab67616d0000b273088ac62bb5a78a91e7d4c6dc`,
+        "artists": ["Manolo Garcia"],
+        "album": "Manolo Garcia",
         "duration": "2:11"
     },
     {
         "id": 5,
         "albumId": 1,
-        "title": "Night's End",
-        "image": `https://vinyl.lofirecords.com/cdn/shop/products/VINYL_MORNING_COFFEE_4-min.png?v=1680526353`,
-        "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "title": "Suave",
+        "image": `https://i.scdn.co/image/ab67616d00001e02751551d5ab31d334f8c7f7b6`,
+        "artists": ["Manolo Garcia"],
+        "album": "Manolo Garcia",
         "duration": "2:26"
     },
     {
@@ -279,7 +273,7 @@ export const songs: Song[] = [
         "title": "Moonlit Walk",
         "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
         "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "album": "Manolo Garcia",
         "duration": "3:49"
     },
     {
@@ -288,7 +282,7 @@ export const songs: Song[] = [
         "title": "Coffee Daze",
         "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
         "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "album": "Manolo Garcia",
         "duration": "1:52"
     },
     {
@@ -297,7 +291,7 @@ export const songs: Song[] = [
         "title": "Skyline Serenade",
         "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
         "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "album": "Manolo Garcia",
         "duration": "2:15"
     },
     {
@@ -306,7 +300,7 @@ export const songs: Song[] = [
         "title": "Urban Echoes",
         "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
         "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "album": "Manolo Garcia",
         "duration": "4:06"
     },
     {
@@ -315,7 +309,7 @@ export const songs: Song[] = [
         "title": "Night's End",
         "image": "https://f4.bcbits.com/img/a2793859494_16.jpg",
         "artists": ["LoFi Dreamer"],
-        "album": "Chill Lo-Fi Music",
+        "album": "Manolo Garcia",
         "duration": "2:54"
     },
 ]

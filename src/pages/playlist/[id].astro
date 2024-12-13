@@ -2,16 +2,18 @@
 import Layout from "../../layouts/Layout.astro";
 import PlayListItemCard from "../../components/PlayListItemCard.astro";
 
-import { allPlaylists, songs } from "../../lib/data";
+import { allPlaylists, playlists, songs } from "../../lib/data";
 import { MusicsTable } from "../../components/MusicsTable";
 import { CardPlayButton } from "../../components/CardPlayButton";
 
 const { id } = Astro.params;
 
 const playlist = allPlaylists.find((playlist) => playlist.id === id);
+const color = playlist?.color.dark;
 const playlistSongs = songs.filter(
     (song) => song.albumId === playlist?.albumId,
 );
+
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -20,7 +22,7 @@ const playlistSongs = songs.filter(
 <Layout title="Spotify Clone">
     <div
         id="playlist-container"
-        class="relative flex flex-col h-full bg-zinc-900 overflow-x-hidden"
+        class=`relative flex flex-col h-full bg-[${color}] overflow-x-hidden`
         transition:name=`playlist ${id} box`
     >
         <!--Page Header -->
@@ -67,8 +69,9 @@ const playlistSongs = songs.filter(
             <!--Greetings -->
         </div>
         <div
-            class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 -z-10"
-        >
+            class=`absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/80 -z-10 `
+        style=
+        `background-color: ${color};` >
         </div>
         <section class="p-6">
             <MusicsTable songs={playlistSongs} client:only="react" />
